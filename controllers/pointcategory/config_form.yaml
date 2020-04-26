@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Point Category
+
+# Model Form Field configuration
+form: $/zoomyboy/osm/models/pointcategory/fields.yaml
+
+# Model Class name
+modelClass: Zoomyboy\Osm\Models\PointCategory
+
+# Default redirect location
+defaultRedirect: zoomyboy/osm/pointcategory
+
+# Create page
+create:
+    title: Create Point Category
+    redirect: zoomyboy/osm/pointcategory/update/:id
+    redirectClose: zoomyboy/osm/pointcategory
+
+# Update page
+update:
+    title: Edit Point Category
+    redirect: zoomyboy/osm/pointcategory
+    redirectClose: zoomyboy/osm/pointcategory
+
+# Preview page
+preview:
+    title: Preview Point Category

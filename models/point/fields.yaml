@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+
+    image:
+        label: Bild
+        type: mediafinder
+  
+    href:
+        label: URL
+    
+    icon:
+        type: mediafinder
+        label: Icon
+
+    location:
+        type: zoomyboy_osm_location
+        label: Ort
+
+    category:
+        type: relation
+
+    description:
+      type: richeditor
+      name: Beschreibung

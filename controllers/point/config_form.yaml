@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Point
+
+# Model Form Field configuration
+form: $/zoomyboy/osm/models/point/fields.yaml
+
+# Model Class name
+modelClass: Zoomyboy\Osm\Models\Point
+
+# Default redirect location
+defaultRedirect: zoomyboy/osm/point
+
+# Create page
+create:
+    title: Create Point
+    redirect: zoomyboy/osm/point/update/:id
+    redirectClose: zoomyboy/osm/point
+
+# Update page
+update:
+    title: Edit Point
+    redirect: zoomyboy/osm/point
+    redirectClose: zoomyboy/osm/point
+
+# Preview page
+preview:
+    title: Preview Point
