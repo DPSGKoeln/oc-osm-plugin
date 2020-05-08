@@ -6,12 +6,20 @@
 
 <?php else: ?>
 
-    <input
-        type="text"
-        id="<?= $this->getId('input') ?>"
-        name="<?= $name ?>"
-        value="<?= $value ?>"
-        class="form-control"
-        autocomplete="off" />
+    <div class="location-input-wrapper"data-n="<?= $name ?>">
+        <input
+            type="text"
+            id="<?= $this->getId('input') ?>"
+            name="<?= $name ?>[description]"
+            data-js-request="<?= $this->getEventHandler('onChangeLocation') ?>"
+            value="<?= $value ?>"
+            class="form-control"
+            data-load-location
+            autocomplete="off" />
+
+        <div id="location-output"></div>
+
+        <div id="location-fields"></div>
+    </div>
 
 <?php endif ?>

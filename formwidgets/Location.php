@@ -1,6 +1,9 @@
 <?php namespace Zoomyboy\Osm\FormWidgets;
 
+use Input;
+use Response;
 use Backend\Classes\FormWidgetBase;
+use Zoomyboy\Osm\Classes\Nominatim;
 
 /**
  * OsmLocation Form Widget
@@ -53,5 +56,12 @@ class Location extends FormWidgetBase
     public function getSaveValue($value)
     {
         return $value;
+    }
+
+    public function onChangeLocation() {
+        return Response::make($this->makePartial('options', [
+            'locations' => app(Nominatim::class)->resolve(Input::get('currentLocation')),
+            'name' => str_slug($this->formField->getName())
+        ]));
     }
 }

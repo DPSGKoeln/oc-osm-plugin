@@ -1,0 +1,6 @@
+<?php foreach ($locations as $id => $location): ?>
+    <label class="location-option" for="<?= $name ?>-location-option-<?= $id ?>">
+        <input type="radio" data-lat="<?= $location->lat ?>" data-lon="<?= $location->lon ?>" id="<?= $name ?>-location-option-<?= $id ?>">
+        <span><?= $location->name ?></span>
+    </label>
+<?php endforeach; ?>

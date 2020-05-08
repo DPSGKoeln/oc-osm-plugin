@@ -3,6 +3,8 @@
 use Backend;
 use System\Classes\PluginBase;
 use Zoomyboy\Osm\FormWidgets\Location;
+use Zoomyboy\Osm\Classes\Nominatim;
+use GuzzleHttp\Client;
 
 /**
  * osm Plugin Information File
@@ -31,7 +33,10 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-
+        app()->bind(Nominatim::class, function() {
+            $client = new Client(['base_uri' => 'https://nominatim.openstreetmap.org']);
+            return new Nominatim($client);
+        });
     }
 
     /**
@@ -51,10 +56,8 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Zoomyboy\Osm\Components\MyComponent' => 'myComponent',
+            'Zoomyboy\Osm\Components\OsmMap' => 'zoomyboy_osm_map',
         ];
     }
 

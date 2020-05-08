@@ -1,0 +1,31 @@
+.location-input-wrapper {
+    position: relative;
+}
+
+.location-input-wrapper #location-output {
+    position: absolute;
+    z-index: 10;
+    background: white;
+    border: 1px hsl(202, 10%, 84%) solid;
+    width: 100%;
+    border-top: 0;
+}
+.location-input-wrapper #location-output label {
+    padding: 8px 25px 8px 13px;
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.location-input-wrapper #location-output label input {
+    position: absolute;
+    top: -99;
+    left: -99;
+    visibility: hidden;
+}
+
+.location-input-wrapper #location-output label:hover {
+    background-color: hsl(205, 77%, 61%);
+    color: white;
+    cursor: pointer;
+}

@@ -3,16 +3,16 @@
 use Model;
 
 /**
- * Point Model
+ * PointCategory Model
  */
-class Point extends Model
+class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'zoomyboy_osm_points';
+    public $table = 'zoomyboy_osm_point_categories';
 
     /**
      * @var array Guarded fields
@@ -37,7 +37,7 @@ class Point extends Model
     /**
      * @var array Attributes to be cast to JSON
      */
-    protected $jsonable = ['location'];
+    protected $jsonable = [];
 
     /**
      * @var array Attributes to be appended to the API representation of the model (ex. toArray())
@@ -61,10 +61,10 @@ class Point extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
-    public $belongsTo = [
-        'category' => [ PointCategory::class, 'category_id']
+    public $hasMany = [
+        'points' => Point::class
     ];
+    public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
