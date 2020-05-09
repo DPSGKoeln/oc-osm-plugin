@@ -17,6 +17,7 @@ class CreatePointsTable extends Migration
             $table->string('href');
             $table->string('icon');
             $table->integer('category_id');
+            $table->text('location')->nullable();
             $table->timestamps();
         });
     }

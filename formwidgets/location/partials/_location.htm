@@ -12,14 +12,18 @@
             id="<?= $this->getId('input') ?>"
             name="<?= $name ?>[description]"
             data-js-request="<?= $this->getEventHandler('onChangeLocation') ?>"
-            value="<?= $value ?>"
+            value="<?= $value->get('description', '') ?>"
             class="form-control"
             data-load-location
             autocomplete="off" />
 
         <div id="location-output"></div>
 
-        <div id="location-fields"></div>
+        <div id="location-fields">
+            <?php foreach($value->except('description') as $key => $v): ?>
+            <input type="hidden" name="<?= $name ?>[<?= $key ?>]" value="<?= $v ?>">
+            <?php endforeach; ?>
+        </div>
     </div>
 
 <?php endif ?>

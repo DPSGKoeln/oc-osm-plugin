@@ -46,6 +46,12 @@
             if (self.lastDataTrackInputRequest) {
                 self.lastDataTrackInputRequest.abort();
             }
+            
+            if ($(self.$el).val().length == 0) {
+                self.$wrapper.find('#location-output').html('');
+                self.$wrapper.find('#location-fields').html('');
+                return;
+            }
 
             self.lastDataTrackInputRequest = $(self).request(self.$el.data('js-request'), {
                 data: { currentLocation: $(self.$el).val() },

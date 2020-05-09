@@ -37,7 +37,7 @@ class Location extends FormWidgetBase
     public function prepareVars()
     {
         $this->vars['name'] = $this->formField->getName();
-        $this->vars['value'] = $this->getLoadValue();
+        $this->vars['value'] = collect($this->getLoadValue());
         $this->vars['model'] = $this->model;
     }
 
@@ -55,6 +55,10 @@ class Location extends FormWidgetBase
      */
     public function getSaveValue($value)
     {
+        if (array_get($value, 'description', '') == '') {
+            return null;
+        }
+
         return $value;
     }
 
