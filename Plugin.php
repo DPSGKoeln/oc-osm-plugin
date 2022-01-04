@@ -1,10 +1,10 @@
 <?php namespace Zoomyboy\Osm;
 
 use Backend;
-use System\Classes\PluginBase;
-use Zoomyboy\Osm\FormWidgets\Location;
-use Zoomyboy\Osm\Classes\Nominatim;
 use GuzzleHttp\Client;
+use System\Classes\PluginBase;
+use Zoomyboy\Osm\Classes\Nominatim;
+use Zoomyboy\Osm\FormWidgets\Location;
 
 /**
  * osm Plugin Information File
@@ -20,7 +20,7 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'osm',
-            'description' => 'No description provided yet...',
+            'description' => 'Plugin for OpenStreetMap functions',
             'author'      => 'zoomyboy',
             'icon'        => 'icon-leaf'
         ];
@@ -56,9 +56,7 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return [
-            'Zoomyboy\Osm\Components\OsmMap' => 'zoomyboy_osm_map',
-        ];
+        return [];
     }
 
     /**
@@ -68,12 +66,7 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return [
-            'zoomyboy.osm.all' => [
-                'tab' => 'osm',
-                'label' => 'OSM nutzen'
-            ],
-        ];
+        return [];
     }
 
     public function registerFormWidgets() {
@@ -89,30 +82,6 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return [
-            'osm' => [
-                'label'       => 'Karten',
-                'url'         => Backend::url('zoomyboy/osm/index'),
-                'icon'        => 'icon-map',
-                'permissions' => ['zoomyboy.osm.*'],
-                'order'       => 500,
-                'sideMenu' => [
-                    'point' => [
-                        'label'       => 'Punkte',
-                        'url'         => Backend::url('zoomyboy/osm/point'),
-                        'icon'        => 'icon-map',
-                        'permissions' => ['zoomyboy.osm.*'],
-                        'order'       => 500,
-                    ],
-                    'point_category' => [
-                        'label'       => 'Punkt-Kategorien',
-                        'url'         => Backend::url('zoomyboy/osm/pointcategory'),
-                        'icon'        => 'icon-map',
-                        'permissions' => ['zoomyboy.osm.*'],
-                        'order'       => 500,
-                    ]
-                ]
-            ],
-        ];
+        return [];
     }
 }
